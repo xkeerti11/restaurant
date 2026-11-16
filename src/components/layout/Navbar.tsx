@@ -211,7 +211,7 @@ export default function Navbar() {
           </div>
 
           {/* Navigation Links (Scrollable with ample touch targets) */}
-          <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-6 space-y-1.5">
+          <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-6 space-y-1.5" data-lenis-prevent>
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (

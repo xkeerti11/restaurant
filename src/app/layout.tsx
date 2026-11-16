@@ -4,6 +4,7 @@ import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CartDrawer from "@/components/cart/CartDrawer";
+import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
 import { defaultRestaurantConfig } from "@/lib/mockData";
 
 export const metadata: Metadata = {
@@ -33,13 +34,15 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-background text-text-main min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white">
-        <AnnouncementBar />
-        <Navbar />
-        <main className="flex-1 focus-ring" id="main-content">
-          {children}
-        </main>
-        <CartDrawer />
-        <Footer />
+        <SmoothScrollProvider>
+          <AnnouncementBar />
+          <Navbar />
+          <main className="flex-1 focus-ring" id="main-content">
+            {children}
+          </main>
+          <CartDrawer />
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );
