@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { MenuItem, FoodVariant, FoodModifier } from "@/types";
 import { useCartStore } from "@/store/cartStore";
 import { formatPrice } from "@/lib/utils";
@@ -103,10 +104,13 @@ export default function ItemCustomizerModal({ item, onClose }: ItemCustomizerMod
 
         {/* Modal Header & Hero Image */}
         <div className="relative h-56 sm:h-64 w-full overflow-hidden flex-shrink-0 bg-black">
-          <img
+          <Image
             src={item.image_url}
             alt={item.name}
-            className="w-full h-full object-cover opacity-90"
+            fill
+            sizes="(max-width: 768px) 100vw, 560px"
+            quality={80}
+            className="object-cover opacity-90"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent" />
           <div className="absolute bottom-4 left-6 right-6">

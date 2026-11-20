@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useMemo } from "react";
+import Image from "next/image";
 import { GalleryItem, GalleryCategory } from "@/types";
 import { mockGalleryItems } from "@/lib/mockData";
 import { X, Sparkles, ZoomIn, Calendar, ArrowRight } from "lucide-react";
@@ -66,15 +67,15 @@ export default function LuxuryGallerySection({
 
             {/* Category Filter Pills */}
             <div
-              role="tablist"
-              aria-label="Gallery Categories"
+              role="group"
+              aria-label="Filter gallery by category"
               className="flex flex-wrap items-center gap-2 bg-surface p-1.5 rounded-2xl border border-border"
             >
               {categories.map((cat) => (
                 <button
                   key={cat.value}
-                  role="tab"
-                  aria-selected={activeCategory === cat.value}
+                  type="button"
+                  aria-pressed={activeCategory === cat.value}
                   onClick={() => setActiveCategory(cat.value)}
                   className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all active:scale-95 focus-ring ${
                     activeCategory === cat.value
@@ -102,10 +103,13 @@ export default function LuxuryGallerySection({
             >
               {/* Image Container */}
               <div className="relative h-64 sm:h-72 overflow-hidden bg-surface">
-                <img
+                <Image
                   src={item.image_url}
                   alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  quality={80}
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
 
@@ -178,10 +182,13 @@ export default function LuxuryGallerySection({
 
             {/* Image Preview */}
             <div className="md:w-3/5 bg-black flex items-center justify-center relative min-h-[300px] sm:min-h-[380px] md:min-h-[500px]">
-              <img
+              <Image
                 src={selectedItem.image_url}
                 alt={selectedItem.title}
-                className="max-h-[500px] w-full object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 60vw"
+                quality={85}
+                className="object-contain"
               />
             </div>
 

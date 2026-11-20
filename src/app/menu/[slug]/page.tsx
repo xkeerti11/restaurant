@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { mockMenuItems } from "@/lib/mockData";
 import { formatPrice } from "@/lib/utils";
 import { useCartStore } from "@/store/cartStore";
@@ -66,10 +67,14 @@ export default function FoodDetailsPage() {
           {/* Left Column: Image & Accolades */}
           <div className="lg:col-span-7 space-y-6">
             <div className="relative h-80 sm:h-[460px] rounded-2xl overflow-hidden border border-border bg-surface">
-              <img
+              <Image
                 src={item.image_url}
                 alt={item.name}
-                className="w-full h-full object-cover"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                quality={85}
+                className="object-cover"
               />
               <div className="absolute top-4 left-4 flex gap-2">
                 <span className="px-3 py-1 rounded-full text-xs font-bold bg-primary text-white uppercase tracking-wider shadow-glow">

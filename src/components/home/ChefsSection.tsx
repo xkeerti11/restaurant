@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { mockChefs } from "@/lib/mockData";
 import { Award } from "lucide-react";
 
@@ -28,13 +29,16 @@ export default function ChefsSection() {
               key={chef.id}
               className="glass-card rounded-2xl overflow-hidden border border-border flex flex-col sm:flex-row group hover:border-primary/40 transition-all duration-300"
             >
-              <div className="sm:w-2/5 h-60 sm:h-auto overflow-hidden relative bg-surface">
-                <img
+              <div className="sm:w-2/5 min-h-[240px] sm:min-h-[280px] overflow-hidden relative bg-surface">
+                <Image
                   src={chef.image_url}
                   alt={chef.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 40vw"
+                  quality={80}
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-surface sm:from-transparent sm:bg-gradient-to-r sm:to-surface opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface sm:from-transparent sm:bg-gradient-to-r sm:to-surface opacity-60 pointer-events-none" />
               </div>
 
               <div className="p-6 sm:p-7 sm:w-3/5 flex flex-col justify-between">

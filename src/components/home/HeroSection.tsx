@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { defaultRestaurantConfig } from "@/lib/mockData";
 import { ArrowRight, Calendar, Sparkles, Star, Award, ShieldCheck } from "lucide-react";
 
@@ -10,10 +11,14 @@ export default function HeroSection() {
     <section className="relative min-h-[84vh] sm:min-h-[88vh] lg:min-h-[92vh] flex items-center justify-center overflow-hidden bg-background">
       {/* Background AI-Generated Luxury Image with Cinematic Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <img
+        <Image
           src="/images/gallery/interior-dining-hall.jpg"
           alt="Luxury Restaurant Dining Ambiance"
-          className="w-full h-full object-cover object-center scale-105 opacity-35"
+          fill
+          priority
+          sizes="100vw"
+          quality={80}
+          className="object-cover object-center scale-105 opacity-35"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/50" />
       </div>

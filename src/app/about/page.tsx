@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { defaultRestaurantConfig } from "@/lib/mockData";
 import ChefsSection from "@/components/home/ChefsSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
@@ -28,12 +29,15 @@ export default function AboutPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div className="relative h-80 sm:h-96 lg:h-[480px] rounded-2xl overflow-hidden border border-border bg-surface">
-            <img
+            <Image
               src="/images/gallery/kitchen-live-flame.jpg"
               alt="Live Wood-Fired Hearth Kitchen"
-              className="w-full h-full object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              quality={80}
+              className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60 pointer-events-none" />
           </div>
 
           <div className="space-y-6">

@@ -181,8 +181,9 @@ export default function ReservationWidget() {
                     <button
                       type="button"
                       key={slot}
+                      role="radio"
+                      aria-checked={timeSlot === slot}
                       onClick={() => setTimeSlot(slot)}
-                      aria-pressed={timeSlot === slot}
                       className={`px-3.5 py-2 rounded-xl text-xs font-semibold active:scale-95 transition-all focus-ring ${
                         timeSlot === slot
                           ? "bg-primary text-white shadow-glow"

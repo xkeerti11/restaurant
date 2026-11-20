@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { mockMenuItems, mockGalleryItems, defaultRestaurantConfig } from "@/lib/mockData";
 import { formatPrice } from "@/lib/utils";
 import { MenuItem, GalleryItem } from "@/types";
@@ -515,8 +516,8 @@ export default function AdminDashboardPage() {
               {galleryList.map((item) => (
                 <div key={item.id} className="rounded-2xl bg-surface border border-border overflow-hidden">
                   <div className="h-44 overflow-hidden relative bg-black">
-                    <img src={item.image_url} alt={item.title} className="w-full h-full object-cover" />
-                    <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md text-[10px] font-bold bg-black/80 text-primary uppercase">
+                    <Image src={item.image_url} alt={item.title} fill sizes="(max-width: 768px) 100vw, 33vw" quality={75} className="object-cover" />
+                    <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md text-[10px] font-bold bg-black/80 text-primary uppercase z-10">
                       {item.category}
                     </span>
                   </div>

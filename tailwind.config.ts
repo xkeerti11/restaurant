@@ -21,7 +21,7 @@ const config: Config = {
         border: "#292D32",
         text: {
           main: "#F5F2EC",
-          secondary: "#999DA5",
+          secondary: "#ABB0B8",
         },
         status: {
           success: "#35B779",

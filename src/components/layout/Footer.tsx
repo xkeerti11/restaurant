@@ -42,7 +42,7 @@ export default function Footer() {
               <a
                 href={defaultRestaurantConfig.social_links.instagram}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Instagram profile"
                 className="w-9 h-9 rounded-xl bg-surface border border-border flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary transition-all focus-ring"
               >
@@ -51,7 +51,7 @@ export default function Footer() {
               <a
                 href={defaultRestaurantConfig.social_links.facebook}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Facebook page"
                 className="w-9 h-9 rounded-xl bg-surface border border-border flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary transition-all focus-ring"
               >
@@ -60,7 +60,7 @@ export default function Footer() {
               <a
                 href={defaultRestaurantConfig.social_links.twitter}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Twitter account"
                 className="w-9 h-9 rounded-xl bg-surface border border-border flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary transition-all focus-ring"
               >
