@@ -30,7 +30,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div className="relative h-80 sm:h-96 lg:h-[480px] rounded-2xl overflow-hidden border border-border bg-surface">
             <Image
-              src="/images/gallery/kitchen-live-flame.jpg"
+              src="/images/gallery/kitchen-live-flame-opt.webp"
               alt="Live Wood-Fired Hearth Kitchen"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

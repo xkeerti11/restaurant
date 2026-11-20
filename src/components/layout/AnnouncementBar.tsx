@@ -16,7 +16,7 @@ export default function AnnouncementBar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
         <div className="flex-1 flex items-center justify-center gap-2 text-center overflow-hidden">
-          <span className="flex-shrink-0 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary/20 text-primary font-bold text-[10px] uppercase tracking-wider">
+          <span className="flex-shrink-0 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary text-white font-bold text-[10px] uppercase tracking-wider">
             <Gift className="w-3 h-3" aria-hidden="true" />
             Privilege
           </span>

@@ -18,7 +18,14 @@ export default function SmoothScrollProvider({
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) return;
 
-    // Instantiate luxury momentum smooth scrolling
+    // On touch devices / mobile screens, use native 120Hz hardware scroll (no JS RAF loop = 0ms TBT)
+    const isTouchDevice =
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      window.matchMedia("(pointer: coarse)").matches;
+    if (isTouchDevice) return;
+
+    // Instantiate luxury momentum smooth scrolling for desktop mouse wheel
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // physics-based exponential curve

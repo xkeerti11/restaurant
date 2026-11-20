@@ -31,6 +31,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  themeColor: "#08090B",
 };
 
 export default function RootLayout({
@@ -40,6 +41,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`dark scroll-smooth ${inter.variable} ${sora.variable}`}>
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/gallery/interior-dining-hall-mobile.webp"
+          type="image/webp"
+          media="(max-width: 768px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/gallery/interior-dining-hall.webp"
+          type="image/webp"
+          media="(min-width: 769px)"
+        />
+      </head>
       <body className="bg-background text-text-main font-body min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white">
         <SmoothScrollProvider>
           <AnnouncementBar />

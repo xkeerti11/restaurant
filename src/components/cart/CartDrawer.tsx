@@ -103,6 +103,7 @@ export default function CartDrawer() {
                 </p>
                 <button
                   onClick={() => setIsOpen(false)}
+                  aria-label="Explore restaurant menu"
                   className="px-6 py-2.5 rounded-xl bg-primary text-white text-xs font-semibold shadow-glow hover:bg-primary-accent active:scale-95 transition-all focus-ring"
                 >
                   Explore Menu
@@ -194,6 +195,7 @@ export default function CartDrawer() {
                     </span>
                     <button
                       onClick={removeCoupon}
+                      aria-label="Remove applied coupon code"
                       className="text-xs text-text-secondary hover:text-status-error focus-ring rounded px-1"
                     >
                       Remove

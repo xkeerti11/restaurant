@@ -78,12 +78,14 @@ export default function BestsellersSection() {
                     </span>
                   </div>
 
-                  <Link
-                    href={`/menu/${item.slug}`}
-                    className="font-heading font-bold text-lg text-text-main hover:text-primary transition-colors mb-2 block focus-ring rounded"
-                  >
-                    {item.name}
-                  </Link>
+                  <h3 className="mb-2">
+                    <Link
+                      href={`/menu/${item.slug}`}
+                      className="font-heading font-bold text-lg text-text-main hover:text-primary transition-colors block focus-ring rounded"
+                    >
+                      {item.name}
+                    </Link>
+                  </h3>
 
                   <p className="text-xs text-text-secondary leading-relaxed line-clamp-2 mb-4">
                     {item.description}

@@ -11,15 +11,20 @@ export default function HeroSection() {
     <section className="relative min-h-[84vh] sm:min-h-[88vh] lg:min-h-[92vh] flex items-center justify-center overflow-hidden bg-background">
       {/* Background AI-Generated Luxury Image with Cinematic Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <Image
-          src="/images/gallery/interior-dining-hall.jpg"
-          alt="Luxury Restaurant Dining Ambiance"
-          fill
-          priority
-          sizes="100vw"
-          quality={80}
-          className="object-cover object-center scale-105 opacity-35"
-        />
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcSet="/images/gallery/interior-dining-hall-mobile.webp"
+            type="image/webp"
+          />
+          <img
+            src="/images/gallery/interior-dining-hall.webp"
+            alt="Luxury Restaurant Dining Ambiance"
+            fetchPriority="high"
+            decoding="sync"
+            className="w-full h-full object-cover object-center scale-105 opacity-35"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/50" />
       </div>
 

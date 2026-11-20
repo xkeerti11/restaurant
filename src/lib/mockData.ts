@@ -100,7 +100,7 @@ export const mockMenuItems: MenuItem[] = [
       "Charcoal-seared Japanese A5 beef tenderloin, black winter truffle silk puree, charred baby leeks, and 25-year balsamico jus.",
     base_price: 6800, // $68.00
     currency_code: "USD",
-    image_url: "/images/gallery/food-wagyu-steak.jpg",
+    image_url: "/images/gallery/food-wagyu-steak-opt.webp",
     category_id: "cat-mains",
     category_name: "Signature Mains",
     dietary_type: "non-veg",
@@ -155,7 +155,7 @@ export const mockMenuItems: MenuItem[] = [
       "Hand-cut 30-egg yolk pasta ribbon, foraged Pacific morels, Parmigiano-Reggiano Vacche Rosse emulsion, cured egg yolk snow.",
     base_price: 3800, // $38.00
     currency_code: "USD",
-    image_url: "/images/gallery/food-truffle-tagliolini.jpg",
+    image_url: "/images/gallery/food-truffle-tagliolini-opt.webp",
     category_id: "cat-pastas",
     category_name: "Handmade Pasta & Risotto",
     dietary_type: "veg",
@@ -191,7 +191,7 @@ export const mockMenuItems: MenuItem[] = [
       "Flash-sliced sashimi-grade diver scallops, finger lime pearls, white ponzu gelée, pickled shallots, pressed extra virgin olive oil.",
     base_price: 2900, // $29.00
     currency_code: "USD",
-    image_url: "/images/gallery/food-scallop-crudo.jpg",
+    image_url: "/images/gallery/food-scallop-crudo-opt.webp",
     category_id: "cat-seafood",
     category_name: "Coastal & Raw Bar",
     dietary_type: "non-veg",
@@ -213,7 +213,7 @@ export const mockMenuItems: MenuItem[] = [
       "70% Valrhona Guanaja cocoa dome filled with Madagascar vanilla bean mousse, molten espresso caramel poured tableside.",
     base_price: 2200, // $22.00
     currency_code: "USD",
-    image_url: "/images/gallery/food-chocolate-sphere.jpg",
+    image_url: "/images/gallery/food-chocolate-sphere-opt.webp",
     category_id: "cat-desserts",
     category_name: "Desserts & Patisserie",
     dietary_type: "veg",
@@ -235,7 +235,7 @@ export const mockMenuItems: MenuItem[] = [
       "Small-batch bourbon infused with charred orange peel, charred rosemary branch smoke, house spiced bitters, hand-carved ice sphere.",
     base_price: 2400, // $24.00
     currency_code: "USD",
-    image_url: "/images/gallery/lounge-cocktail-bar.jpg",
+    image_url: "/images/gallery/lounge-cocktail-bar-opt.webp",
     category_id: "cat-beverages",
     category_name: "Reserve Cellar & Cocktails",
     dietary_type: "vegan",
@@ -256,7 +256,7 @@ export const mockGalleryItems: GalleryItem[] = [
     id: "gal-01",
     title: "Signature Wagyu Striploin & Black Truffle",
     category: "food",
-    image_url: "/images/gallery/food-wagyu-steak.jpg",
+    image_url: "/images/gallery/food-wagyu-steak-opt.webp",
     description:
       "A5 Japanese Wagyu seared over binchotan white charcoal with winter truffles and micro herbs.",
     aspect_ratio: "landscape",
@@ -268,7 +268,7 @@ export const mockGalleryItems: GalleryItem[] = [
     id: "gal-02",
     title: "Wild Morel & Truffle Tagliolini",
     category: "food",
-    image_url: "/images/gallery/food-truffle-tagliolini.jpg",
+    image_url: "/images/gallery/food-truffle-tagliolini-opt.webp",
     description:
       "Handmade 30-egg yolk pasta with Pacific morels and shaved Umbrian winter truffles.",
     aspect_ratio: "landscape",
@@ -280,7 +280,7 @@ export const mockGalleryItems: GalleryItem[] = [
     id: "gal-03",
     title: "Hokkaido Scallop Crudo & Oscietra Caviar",
     category: "food",
-    image_url: "/images/gallery/food-scallop-crudo.jpg",
+    image_url: "/images/gallery/food-scallop-crudo-opt.webp",
     description:
       "Flash-sliced sashimi-grade scallops arranged in an intricate rosette with finger lime pearls and ponzu.",
     aspect_ratio: "landscape",
@@ -292,7 +292,7 @@ export const mockGalleryItems: GalleryItem[] = [
     id: "gal-04",
     title: "Valrhona Smoked Dark Chocolate Sphere",
     category: "food",
-    image_url: "/images/gallery/food-chocolate-sphere.jpg",
+    image_url: "/images/gallery/food-chocolate-sphere-opt.webp",
     description:
       "Molten espresso caramel sauce poured tableside over a 70% dark chocolate dome.",
     aspect_ratio: "landscape",
@@ -304,7 +304,7 @@ export const mockGalleryItems: GalleryItem[] = [
     id: "gal-05",
     title: "The Grand Dining Hall & Atrium",
     category: "interior",
-    image_url: "/images/gallery/interior-dining-hall.jpg",
+    image_url: "/images/gallery/interior-dining-hall.webp",
     description:
       "Atmospheric evening ambiance featuring curved brass details, velvet booths, and moody candlelight.",
     aspect_ratio: "landscape",
@@ -316,7 +316,7 @@ export const mockGalleryItems: GalleryItem[] = [
     id: "gal-06",
     title: "Open Hearth & Culinary Theatre",
     category: "kitchen",
-    image_url: "/images/gallery/kitchen-live-flame.jpg",
+    image_url: "/images/gallery/kitchen-live-flame-opt.webp",
     description:
       "Guests experience live fire cooking, wood-fired roasting, and precision finishing in our open kitchen.",
     aspect_ratio: "landscape",
@@ -328,7 +328,7 @@ export const mockGalleryItems: GalleryItem[] = [
     id: "gal-07",
     title: "Chef Marcus Vance's Plating Precision",
     category: "chefs",
-    image_url: "/images/gallery/chef-precision-plating.jpg",
+    image_url: "/images/gallery/chef-precision-plating-opt.webp",
     description:
       "Executive Chef Marcus Vance meticulously garnishing our seasonal coastal course with tweezers.",
     aspect_ratio: "portrait",
@@ -340,7 +340,7 @@ export const mockGalleryItems: GalleryItem[] = [
     id: "gal-08",
     title: "Head Pastry Chef Elena Rostova",
     category: "chefs",
-    image_url: "/images/gallery/chef-elena-pastry.jpg",
+    image_url: "/images/gallery/chef-elena-pastry-opt.webp",
     description:
       "Head Pastry Chef Elena Rostova applying delicate edible gold leaf onto architectural dessert creations.",
     aspect_ratio: "portrait",
@@ -352,7 +352,7 @@ export const mockGalleryItems: GalleryItem[] = [
     id: "gal-09",
     title: "The Obsidian Cocktail Lounge",
     category: "events",
-    image_url: "/images/gallery/lounge-cocktail-bar.jpg",
+    image_url: "/images/gallery/lounge-cocktail-bar-opt.webp",
     description:
       "Handcrafted smoked libations, rare vintage spirits, and intimate private booth gatherings.",
     aspect_ratio: "landscape",
@@ -369,7 +369,7 @@ export const mockChefs: ChefProfile[] = [
     position: "Executive Chef & Culinary Director",
     biography:
       "With 18 years across 3-Michelin-starred kitchens in Lyon, Tokyo, and New York, Chef Marcus brings classical French rigor to bold avant-garde flavor concepts.",
-    image_url: "/images/gallery/chef-precision-plating.jpg",
+    image_url: "/images/gallery/chef-precision-plating-opt.webp",
     specialty_dishes: ["A5 Miyazaki Wagyu", "Charcoal Smoked Duck Breast"],
   },
   {
@@ -378,7 +378,7 @@ export const mockChefs: ChefProfile[] = [
     position: "Head Pastry Chef",
     biography:
       "Trained at L'École Valrhona, Elena transforms pastry into sculptural architectural art with surprising savory nuances and botanical infusions.",
-    image_url: "/images/gallery/chef-elena-pastry.jpg",
+    image_url: "/images/gallery/chef-elena-pastry-opt.webp",
     specialty_dishes: ["Valrhona Smoked Sphere", "Citrus & Shiso Tart"],
   },
 ];

@@ -71,9 +71,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-text-main font-heading mb-4">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-text-main font-heading mb-4">
               Explore
-            </h4>
+            </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <Link href="/menu" className="hover:text-primary transition-colors focus-ring rounded py-0.5">
@@ -110,9 +110,9 @@ export default function Footer() {
 
           {/* Opening Hours & Location */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-text-main font-heading mb-4">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-text-main font-heading mb-4">
               Service Hours
-            </h4>
+            </h3>
             <ul className="space-y-2 text-xs sm:text-sm">
               {defaultRestaurantConfig.opening_hours.map((schedule, idx) => (
                 <li key={idx} className="flex flex-col">
@@ -136,9 +136,9 @@ export default function Footer() {
 
           {/* Newsletter Form */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-text-main font-heading mb-4">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-text-main font-heading mb-4">
               Culinary Dispatch
-            </h4>
+            </h3>
             <p className="text-xs leading-relaxed text-text-secondary mb-4">
               Receive private invitations to seasonal tasting menus, cellar releases, and chef collaborations.
             </p>
