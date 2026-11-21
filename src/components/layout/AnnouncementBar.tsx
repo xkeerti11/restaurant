@@ -34,10 +34,10 @@ export default function AnnouncementBar() {
 
         <button
           onClick={() => setIsVisible(false)}
-          className="flex-shrink-0 p-1 rounded-lg text-text-secondary hover:text-text-main hover:bg-surface-elevated transition-colors focus-ring"
+          className="flex-shrink-0 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-text-secondary hover:text-text-main hover:bg-surface-elevated transition-colors focus-ring"
           aria-label="Dismiss Announcement"
         >
-          <X className="w-3.5 h-3.5" aria-hidden="true" />
+          <X className="w-4 h-4" aria-hidden="true" />
         </button>
       </div>
     </aside>

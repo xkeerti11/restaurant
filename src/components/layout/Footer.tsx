@@ -45,7 +45,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram profile"
-                className="w-9 h-9 rounded-xl bg-surface border border-border flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary transition-all focus-ring"
+                className="w-11 h-11 rounded-xl bg-surface border border-border flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary transition-all focus-ring"
               >
                 <Instagram className="w-4 h-4" aria-hidden="true" />
               </a>
@@ -54,7 +54,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook page"
-                className="w-9 h-9 rounded-xl bg-surface border border-border flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary transition-all focus-ring"
+                className="w-11 h-11 rounded-xl bg-surface border border-border flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary transition-all focus-ring"
               >
                 <Facebook className="w-4 h-4" aria-hidden="true" />
               </a>
@@ -63,7 +63,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Twitter account"
-                className="w-9 h-9 rounded-xl bg-surface border border-border flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary transition-all focus-ring"
+                className="w-11 h-11 rounded-xl bg-surface border border-border flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary transition-all focus-ring"
               >
                 <Twitter className="w-4 h-4" aria-hidden="true" />
               </a>
@@ -186,17 +186,17 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <p>© {new Date().getFullYear()} {defaultRestaurantConfig.name}. White-label dining platform. All rights reserved.</p>
-          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2 text-center">
-            <Link href="/privacy" className="hover:text-primary transition-colors focus-ring rounded">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-1 text-center">
+            <Link href="/privacy" className="py-2.5 px-1 hover:text-primary transition-colors focus-ring rounded inline-flex items-center">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-primary transition-colors focus-ring rounded">
+            <Link href="/terms" className="py-2.5 px-1 hover:text-primary transition-colors focus-ring rounded inline-flex items-center">
               Terms of Service
             </Link>
-            <Link href="/account" className="hover:text-primary transition-colors focus-ring rounded">
+            <Link href="/account" className="py-2.5 px-1 hover:text-primary transition-colors focus-ring rounded inline-flex items-center">
               Customer Portal
             </Link>
-            <Link href="/admin" className="hover:text-primary transition-colors font-semibold text-primary-accent focus-ring rounded">
+            <Link href="/admin" className="py-2.5 px-1 hover:text-primary transition-colors font-semibold text-primary-accent focus-ring rounded inline-flex items-center">
               Admin Portal
             </Link>
           </div>

@@ -37,7 +37,7 @@ export default function CategoryBar() {
           </div>
           <Link
             href="/menu"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary-accent hover:text-primary transition-colors group focus-ring rounded"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary-accent hover:text-primary transition-colors group focus-ring rounded py-2.5 px-1"
           >
             <span>View Full Tasting Menu</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />

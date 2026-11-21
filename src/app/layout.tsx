@@ -51,8 +51,16 @@ export default function RootLayout({
           rel="preload"
           as="image"
           href="/images/gallery/interior-dining-hall-mobile.webp"
-          imageSrcSet="/images/gallery/interior-dining-hall-mobile.webp 768w, /images/gallery/interior-dining-hall.webp 1376w"
-          imageSizes="(max-width: 768px) 100vw, 100vw"
+          type="image/webp"
+          media="(max-width: 768px)"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/gallery/interior-dining-hall.webp"
+          type="image/webp"
+          media="(min-width: 769px)"
           fetchPriority="high"
         />
       </head>

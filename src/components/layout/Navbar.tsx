@@ -134,7 +134,7 @@ export default function Navbar() {
             {/* Cart Trigger */}
             <button
               onClick={() => setCartOpen(true)}
-              className="relative p-2 sm:p-2.5 rounded-xl bg-surface-elevated border border-border hover:border-primary text-text-main transition-all flex items-center justify-center group focus-ring active:scale-[0.96]"
+              className="relative w-11 h-11 sm:w-10 sm:h-10 rounded-xl bg-surface-elevated border border-border hover:border-primary text-text-main transition-all flex items-center justify-center group focus-ring active:scale-[0.96]"
               aria-label={`Shopping Cart, ${totalCartItems} items`}
             >
               <ShoppingBag className="w-4 h-4 text-text-main group-hover:text-primary transition-colors" aria-hidden="true" />
@@ -156,7 +156,7 @@ export default function Navbar() {
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="lg:hidden p-2 sm:p-2.5 rounded-xl bg-surface-elevated border border-border text-text-secondary hover:text-text-main focus-ring active:scale-95 transition-all"
+              className="lg:hidden w-11 h-11 rounded-xl bg-surface-elevated border border-border text-text-secondary hover:text-text-main focus-ring active:scale-95 transition-all flex items-center justify-center"
               aria-expanded={mobileMenuOpen}
               aria-label="Open navigation menu"
             >
@@ -201,7 +201,7 @@ export default function Navbar() {
                   setMobileMenuOpen(false);
                   setCartOpen(true);
                 }}
-                className="relative p-2 rounded-xl bg-surface-elevated border border-border text-text-main"
+                className="relative w-11 h-11 rounded-xl bg-surface-elevated border border-border text-text-main flex items-center justify-center"
                 aria-label={`Open Cart, ${totalCartItems} items`}
               >
                 <ShoppingBag className="w-4 h-4 text-text-main" aria-hidden="true" />
@@ -214,7 +214,7 @@ export default function Navbar() {
 
               <button
                 onClick={() => setMobileMenuOpen(false)}
-                className="p-2 rounded-xl bg-surface-elevated border border-border text-text-secondary hover:text-text-main focus-ring active:scale-95 transition-all"
+                className="w-11 h-11 rounded-xl bg-surface-elevated border border-border text-text-secondary hover:text-text-main focus-ring active:scale-95 transition-all flex items-center justify-center"
                 aria-label="Close navigation menu"
               >
                 <X className="w-5 h-5 text-text-main" aria-hidden="true" />
