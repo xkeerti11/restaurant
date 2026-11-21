@@ -1,12 +1,21 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import HeroSection from "@/components/home/HeroSection";
 import CategoryBar from "@/components/home/CategoryBar";
 import BestsellersSection from "@/components/home/BestsellersSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
-import LuxuryGallerySection from "@/components/gallery/LuxuryGallerySection";
 import ChefsSection from "@/components/home/ChefsSection";
-import ReservationWidget from "@/components/home/ReservationWidget";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
+
+const LuxuryGallerySection = dynamic(
+  () => import("@/components/gallery/LuxuryGallerySection"),
+  { ssr: true }
+);
+
+const ReservationWidget = dynamic(
+  () => import("@/components/home/ReservationWidget"),
+  { ssr: true }
+);
 
 export default function HomePage() {
   return (

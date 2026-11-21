@@ -51,15 +51,9 @@ export default function RootLayout({
           rel="preload"
           as="image"
           href="/images/gallery/interior-dining-hall-mobile.webp"
-          type="image/webp"
-          media="(max-width: 768px)"
-        />
-        <link
-          rel="preload"
-          as="image"
-          href="/images/gallery/interior-dining-hall.webp"
-          type="image/webp"
-          media="(min-width: 769px)"
+          imageSrcSet="/images/gallery/interior-dining-hall-mobile.webp 768w, /images/gallery/interior-dining-hall.webp 1376w"
+          imageSizes="(max-width: 768px) 100vw, 100vw"
+          fetchPriority="high"
         />
       </head>
       <body className="bg-background text-text-main font-body min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white">

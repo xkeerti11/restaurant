@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { mockTestimonials } from "@/lib/mockData";
 import { Star, Quote, CheckCircle2 } from "lucide-react";

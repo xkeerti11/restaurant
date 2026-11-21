@@ -180,6 +180,7 @@ export default function Navbar() {
               href="/"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-2.5"
+              aria-label={`${defaultRestaurantConfig.name} - Return to Homepage`}
             >
               <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-primary-accent flex items-center justify-center shadow-glow">
                 <UtensilsCrossed className="w-4 h-4 text-white" aria-hidden="true" />

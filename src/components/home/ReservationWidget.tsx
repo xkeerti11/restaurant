@@ -176,13 +176,12 @@ export default function ReservationWidget() {
                 <span className="text-xs font-semibold text-text-main flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5 text-primary" aria-hidden="true" /> Select Arrival Time Slot
                 </span>
-                <div role="radiogroup" aria-label="Arrival Time Slot" className="flex flex-wrap gap-2">
+                <div role="group" aria-label="Arrival Time Slot" className="flex flex-wrap gap-2">
                   {timeSlots.map((slot) => (
                     <button
                       type="button"
                       key={slot}
-                      role="radio"
-                      aria-checked={timeSlot === slot}
+                      aria-pressed={timeSlot === slot}
                       onClick={() => setTimeSlot(slot)}
                       className={`px-3.5 py-2 rounded-xl text-xs font-semibold active:scale-95 transition-all focus-ring ${
                         timeSlot === slot

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Sparkles, Award, Flame, HeartHandshake } from "lucide-react";
 
