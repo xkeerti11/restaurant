@@ -105,7 +105,8 @@ export default function LuxuryGallerySection({
               onClick={() => setSelectedItem(item)}
               tabIndex={0}
               role="button"
-              onKeyDown={(e) => e.key === "Enter" && setSelectedItem(item)}
+              aria-label={`View photo of ${item.title}`}
+              onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setSelectedItem(item)}
               className="glass-card rounded-2xl overflow-hidden cursor-pointer group hover:border-primary/50 transition-all duration-300 flex flex-col hover:-translate-y-1 hover:shadow-card focus-ring"
             >
               {/* Image Container */}
@@ -176,7 +177,6 @@ export default function LuxuryGallerySection({
         >
           <div
             className="relative max-w-4xl w-full bg-surface border border-border rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row z-10"
-            data-lenis-prevent
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}

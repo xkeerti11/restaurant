@@ -53,9 +53,9 @@ export default function ReservationPage() {
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF781F] block mb-1">
                   Atmosphere {idx + 1}
                 </span>
-                <h3 className="text-lg font-bold font-heading text-[#F5F2EC] mb-2">
+                <h2 className="text-lg font-bold font-heading text-[#F5F2EC] mb-2">
                   {exp.title}
-                </h3>
+                </h2>
                 <p className="text-xs text-[#999DA5] leading-relaxed mb-4">
                   {exp.desc}
                 </p>

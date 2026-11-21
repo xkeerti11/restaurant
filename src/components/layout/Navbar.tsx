@@ -222,7 +222,7 @@ export default function Navbar() {
           </div>
 
           {/* Navigation Links (Scrollable with ample touch targets) */}
-          <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-6 space-y-1.5" data-lenis-prevent>
+          <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-6 space-y-1.5">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -273,7 +273,7 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-primary flex items-center gap-1.5"
               >
-                <User className="w-3.5 h-3.5 text-primary" />
+                <User className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
                 <span>Customer Portal</span>
               </Link>
               <span className="text-border">•</span>
@@ -282,7 +282,7 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-primary flex items-center gap-1.5"
               >
-                <ShieldCheck className="w-3.5 h-3.5 text-primary-accent" />
+                <ShieldCheck className="w-3.5 h-3.5 text-primary-accent" aria-hidden="true" />
                 <span>Staff Admin</span>
               </Link>
             </div>

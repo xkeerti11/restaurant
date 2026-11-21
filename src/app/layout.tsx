@@ -12,19 +12,24 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
-  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 const sora = Sora({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sora",
-  weight: ["400", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
   title: `${defaultRestaurantConfig.name} | ${defaultRestaurantConfig.tagline}`,
   description: defaultRestaurantConfig.description,
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: "/favicon.svg",
+  },
 };
 
 export const viewport: Viewport = {

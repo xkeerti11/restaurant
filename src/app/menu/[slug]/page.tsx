@@ -88,9 +88,9 @@ export default function FoodDetailsPage() {
 
             {/* Ingredients & Allergens Box */}
             <div className="p-6 rounded-2xl bg-surface border border-border space-y-4">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-text-main font-heading">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-text-main font-heading">
                 Culinary Provenance & Sourcing
-              </h3>
+              </h2>
               <div>
                 <span className="text-xs text-text-secondary block mb-2 font-medium">
                   Primary Foraged & Artisanal Ingredients:

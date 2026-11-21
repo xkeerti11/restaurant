@@ -21,7 +21,9 @@ export default function HeroSection() {
             src="/images/gallery/interior-dining-hall.webp"
             alt="Luxury Restaurant Dining Ambiance"
             fetchPriority="high"
-            decoding="sync"
+            decoding="async"
+            width={1376}
+            height={768}
             className="w-full h-full object-cover object-center scale-105 opacity-35"
           />
         </picture>

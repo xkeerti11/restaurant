@@ -96,7 +96,7 @@ export default function CartDrawer() {
           </div>
 
           {/* Cart Items List */}
-          <div className="flex-1 overflow-y-auto p-4 sm:p-5 space-y-3.5" data-lenis-prevent>
+          <div className="flex-1 overflow-y-auto p-4 sm:p-5 space-y-3.5">
             {items.length === 0 ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-12 text-text-secondary">
                 <div className="w-16 h-16 rounded-2xl bg-surface-elevated flex items-center justify-center mb-4">
@@ -124,9 +124,9 @@ export default function CartDrawer() {
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>
-                      <h4 className="text-sm font-semibold text-text-main font-heading">
+                      <h3 className="text-sm font-semibold text-text-main font-heading">
                         {item.menu_item.name}
-                      </h4>
+                      </h3>
                       {item.selected_variant && (
                         <p className="text-xs text-primary-accent mt-0.5 font-medium">
                           Cut/Size: {item.selected_variant.name}

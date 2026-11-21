@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <defs>
+    <linearGradient id="logoGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF781F"/>
+      <stop offset="100%" stop-color="#FFB45C"/>
+    </linearGradient>
+  </defs>
+  <rect width="40" height="40" rx="10" fill="url(#logoGlow)"/>
+  <path d="M14 10 L14 18 M12 10 L12 15 C12 17 13 18 14 18 M16 10 L16 15 C16 17 15 18 14 18 M14 18 L14 30" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M26 10 C24 12 23 15 23 18 C23 20 24 21 26 21 L26 30" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M26 10 L26 21" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -98,7 +98,6 @@ export default function ItemCustomizerModal({ item, onClose }: ItemCustomizerMod
 
       <div
         className="relative max-w-xl w-full bg-surface border border-border rounded-2xl overflow-hidden shadow-2xl my-8 flex flex-col max-h-[90vh] z-10"
-        data-lenis-prevent
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -137,7 +136,7 @@ export default function ItemCustomizerModal({ item, onClose }: ItemCustomizerMod
         </div>
 
         {/* Scrollable Configuration Options */}
-        <div className="p-6 overflow-y-auto flex-1 space-y-6" data-lenis-prevent>
+        <div className="p-6 overflow-y-auto flex-1 space-y-6">
           <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
             {item.description}
           </p>

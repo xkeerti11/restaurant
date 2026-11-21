@@ -186,9 +186,9 @@ export default function CustomerAccountPage() {
                       {res.status}
                     </span>
                   </div>
-                  <h3 className="text-sm sm:text-base font-bold font-heading text-text-main">
+                  <h2 className="text-sm sm:text-base font-bold font-heading text-text-main">
                     Table for {res.party} • {res.area}
-                  </h3>
+                  </h2>
                   <p className="text-xs text-text-secondary mt-1">Arrival: {res.date}</p>
                 </div>
 
@@ -221,9 +221,9 @@ export default function CustomerAccountPage() {
                   Default
                 </span>
               </div>
-              <h3 className="font-heading font-semibold text-sm text-text-main">
+              <h2 className="font-heading font-semibold text-sm text-text-main">
                 740 Park Avenue, Penthouse 14B
-              </h3>
+              </h2>
               <p className="text-xs text-text-secondary">New York, NY 10021</p>
               <div className="pt-2 flex gap-3 text-xs">
                 <button className="text-text-secondary hover:text-primary">Edit</button>
