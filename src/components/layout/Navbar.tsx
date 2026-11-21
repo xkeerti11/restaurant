@@ -14,24 +14,20 @@ export default function Navbar() {
   const totalCartItems = useCartStore((state) => state.getTotalItemsCount());
   const setCartOpen = useCartStore((state) => state.setIsOpen);
 
+  // Passive IntersectionObserver for sticky navbar backdrop state (zero JS main-thread scroll overhead)
   useEffect(() => {
-    let ticking = false;
-    let lastScrolled = false;
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const currentScrolled = window.scrollY > 15;
-          if (currentScrolled !== lastScrolled) {
-            setIsScrolled(currentScrolled);
-            lastScrolled = currentScrolled;
-          }
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const sentinel = document.getElementById("nav-sentinel");
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsScrolled(!entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
   }, []);
 
   // Lock body scroll and handle Escape key when mobile menu is open
@@ -65,7 +61,7 @@ export default function Navbar() {
       {/* Skip to Main Content Link for Keyboard Users */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-xl focus:font-semibold focus:shadow-glow text-xs"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-[#08090B] focus:rounded-xl focus:font-bold focus:shadow-glow text-xs"
       >
         Skip to main content
       </a>
@@ -106,7 +102,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-xs font-semibold uppercase tracking-wider transition-colors hover:text-primary relative py-1 focus-ring rounded ${
+                  className={`text-xs font-semibold uppercase tracking-wider transition-colors hover:text-primary relative py-2.5 px-1 inline-flex items-center focus-ring rounded ${
                     isActive ? "text-primary font-bold" : "text-text-secondary"
                   }`}
                   aria-current={isActive ? "page" : undefined}
@@ -125,7 +121,7 @@ export default function Navbar() {
             {/* Reservation Button (Desktop/Tablet) */}
             <Link
               href="/reservation"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-semibold border border-primary/40 text-text-main hover:bg-primary/10 hover:border-primary active:scale-[0.98] transition-all focus-ring"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 min-h-[44px] rounded-xl text-xs font-semibold border border-primary/40 text-text-main hover:bg-primary/10 hover:border-primary active:scale-[0.98] transition-all focus-ring"
             >
               <Calendar className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
               <span>Reserve Table</span>
@@ -139,7 +135,7 @@ export default function Navbar() {
             >
               <ShoppingBag className="w-4 h-4 text-text-main group-hover:text-primary transition-colors" aria-hidden="true" />
               {totalCartItems > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-primary text-white text-[10px] font-bold flex items-center justify-center shadow-glow animate-pulse">
+                <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-primary text-[#08090B] text-[10px] font-black flex items-center justify-center shadow-glow animate-pulse">
                   {totalCartItems}
                 </span>
               )}
@@ -148,7 +144,7 @@ export default function Navbar() {
             {/* Order Online CTA (Desktop) */}
             <Link
               href="/menu"
-              className="hidden md:inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-primary to-primary-accent text-white text-xs font-semibold shadow-glow hover:shadow-glow-lg hover:scale-[1.02] active:scale-[0.98] transition-all focus-ring"
+              className="hidden md:inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 min-h-[44px] rounded-xl bg-gradient-to-r from-primary to-primary-accent text-[#08090B] text-xs font-bold shadow-glow hover:shadow-glow-lg hover:scale-[1.02] active:scale-[0.98] transition-all focus-ring"
             >
               Order Online
             </Link>
@@ -206,7 +202,7 @@ export default function Navbar() {
               >
                 <ShoppingBag className="w-4 h-4 text-text-main" aria-hidden="true" />
                 {totalCartItems > 0 && (
-                  <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-primary text-white text-[9px] font-bold flex items-center justify-center shadow-glow">
+                  <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-primary text-[#08090B] text-[9px] font-black flex items-center justify-center shadow-glow">
                     {totalCartItems}
                   </span>
                 )}
@@ -262,7 +258,7 @@ export default function Navbar() {
             <Link
               href="/menu"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-primary to-primary-accent text-center text-sm font-semibold text-white shadow-glow active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-primary to-primary-accent text-center text-sm font-bold text-[#08090B] shadow-glow active:scale-[0.98] transition-all flex items-center justify-center gap-2"
             >
               <span>Explore Menu & Order Online</span>
             </Link>

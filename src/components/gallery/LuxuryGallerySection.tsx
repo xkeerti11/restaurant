@@ -4,7 +4,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { GalleryItem, GalleryCategory } from "@/types";
 import { mockGalleryItems } from "@/lib/mockData";
-import { X, Sparkles, ZoomIn, Calendar, ArrowRight } from "lucide-react";
+import { X, Sparkles, ZoomIn, Calendar } from "lucide-react";
 import Link from "next/link";
 
 interface LuxuryGallerySectionProps {
@@ -84,9 +84,9 @@ export default function LuxuryGallerySection({
                   type="button"
                   aria-pressed={activeCategory === cat.value}
                   onClick={() => setActiveCategory(cat.value)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all active:scale-95 focus-ring ${
+                  className={`px-3.5 py-2 min-h-[44px] rounded-xl text-xs font-bold transition-all active:scale-95 focus-ring ${
                     activeCategory === cat.value
-                      ? "bg-primary text-white shadow-glow"
+                      ? "bg-primary text-[#08090B] shadow-glow"
                       : "text-text-secondary hover:text-text-main hover:bg-surface-elevated"
                   }`}
                 >
@@ -182,7 +182,7 @@ export default function LuxuryGallerySection({
             {/* Close Button */}
             <button
               onClick={() => setSelectedItem(null)}
-              className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-surface-elevated/80 text-text-secondary hover:text-white hover:bg-primary transition-all focus-ring"
+              className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-surface-elevated/80 text-text-secondary hover:text-[#08090B] hover:bg-primary transition-all focus-ring min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label="Close image preview"
             >
               <X className="w-5 h-5" aria-hidden="true" />
@@ -236,14 +236,14 @@ export default function LuxuryGallerySection({
                 <Link
                   href="/reservation"
                   onClick={() => setSelectedItem(null)}
-                  className="w-full sm:w-auto flex-1 py-2.5 px-4 rounded-xl text-xs font-semibold bg-primary hover:bg-primary-accent text-white active:scale-95 transition-all text-center flex items-center justify-center gap-1.5 focus-ring"
+                  className="w-full sm:w-auto flex-1 py-3 px-4 rounded-xl text-xs font-bold bg-primary hover:bg-primary-accent text-[#08090B] active:scale-95 transition-all text-center flex items-center justify-center gap-1.5 focus-ring min-h-[44px]"
                 >
                   <Calendar className="w-3.5 h-3.5" aria-hidden="true" />
                   <span>Reserve Table</span>
                 </Link>
                 <button
                   onClick={() => setSelectedItem(null)}
-                  className="w-full sm:w-auto px-4 py-2.5 rounded-xl text-xs font-semibold bg-surface-elevated hover:bg-surface text-text-main border border-border transition-colors focus-ring"
+                  className="w-full sm:w-auto px-4 py-3 rounded-xl text-xs font-semibold bg-surface-elevated hover:bg-surface text-text-main border border-border transition-colors focus-ring min-h-[44px]"
                 >
                   Close View
                 </button>
@@ -255,4 +255,3 @@ export default function LuxuryGallerySection({
     </section>
   );
 }
-

@@ -5,19 +5,20 @@ import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CartDrawer from "@/components/cart/CartDrawer";
-import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
 import { defaultRestaurantConfig } from "@/lib/mockData";
 
 const inter = Inter({
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
   variable: "--font-inter",
+  preload: true,
 });
 
 const sora = Sora({
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
   variable: "--font-sora",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -64,16 +65,15 @@ export default function RootLayout({
           fetchPriority="high"
         />
       </head>
-      <body className="bg-background text-text-main font-body min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white">
-        <SmoothScrollProvider>
-          <AnnouncementBar />
-          <Navbar />
-          <main className="flex-1 focus-ring" id="main-content">
-            {children}
-          </main>
-          <CartDrawer />
-          <Footer />
-        </SmoothScrollProvider>
+      <body className="bg-background text-text-main font-body min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white relative">
+        <div id="nav-sentinel" className="absolute top-0 left-0 w-full h-[1px] pointer-events-none" aria-hidden="true" />
+        <AnnouncementBar />
+        <Navbar />
+        <main className="flex-1 focus-ring" id="main-content">
+          {children}
+        </main>
+        <CartDrawer />
+        <Footer />
       </body>
     </html>
   );

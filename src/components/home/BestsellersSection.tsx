@@ -1,17 +1,12 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { MenuItem } from "@/types";
 import { mockMenuItems } from "@/lib/mockData";
 import { formatPrice } from "@/lib/utils";
-import ItemCustomizerModal from "@/components/menu/ItemCustomizerModal";
-import { Plus, Star, Clock, Sparkles } from "lucide-react";
+import BestsellerOrderButton from "./BestsellerOrderButton";
+import { Star, Clock, Sparkles } from "lucide-react";
 
 export default function BestsellersSection() {
-  const [activeItem, setActiveItem] = useState<MenuItem | null>(null);
-
   const bestsellers = mockMenuItems.filter((item) => item.is_bestseller || item.is_featured);
 
   return (
@@ -51,7 +46,7 @@ export default function BestsellersSection() {
 
                 {/* Dietary & Bestseller Badges */}
                 <div className="absolute top-4 left-4 flex gap-1.5">
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-primary text-white uppercase tracking-wider shadow-glow">
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-primary text-[#08090B] uppercase tracking-wider shadow-glow">
                     Signature
                   </span>
                   <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-surface/90 backdrop-blur-md text-text-main border border-border uppercase">
@@ -103,23 +98,13 @@ export default function BestsellersSection() {
                     </span>
                   </div>
 
-                  <button
-                    onClick={() => setActiveItem(item)}
-                    className="px-4 py-2.5 rounded-xl bg-surface-elevated hover:bg-primary text-text-main hover:text-white border border-border hover:border-primary text-xs font-semibold active:scale-95 transition-all flex items-center gap-1.5 focus-ring"
-                    aria-label={`Customize and add ${item.name} to bag`}
-                  >
-                    <Plus className="w-4 h-4" aria-hidden="true" />
-                    <span>Customize & Add</span>
-                  </button>
+                  <BestsellerOrderButton item={item} />
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
-
-      {/* Modal */}
-      <ItemCustomizerModal item={activeItem} onClose={() => setActiveItem(null)} />
     </section>
   );
 }

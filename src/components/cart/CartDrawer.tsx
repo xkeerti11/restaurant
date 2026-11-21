@@ -7,13 +7,17 @@ import { formatPrice } from "@/lib/utils";
 import { X, Plus, Minus, Trash2, ShoppingBag, ArrowRight, Tag, Check, AlertCircle } from "lucide-react";
 
 export default function CartDrawer() {
+  const isOpen = useCartStore((state) => state.isOpen);
+  if (!isOpen) return null;
+  return <CartDrawerModal />;
+}
+
+function CartDrawerModal() {
   const {
     items,
-    isOpen,
     setIsOpen,
     updateQuantity,
     removeItem,
-    clearCart,
     couponCode,
     applyCoupon,
     removeCoupon,
@@ -29,23 +33,19 @@ export default function CartDrawer() {
 
   // Lock body scroll and close on Escape key
   useEffect(() => {
-    if (isOpen) {
-      const originalOverflow = document.body.style.overflow;
-      document.body.style.overflow = "hidden";
-      const handleKeyDown = (e: KeyboardEvent) => {
-        if (e.key === "Escape") {
-          setIsOpen(false);
-        }
-      };
-      window.addEventListener("keydown", handleKeyDown);
-      return () => {
-        document.body.style.overflow = originalOverflow;
-        window.removeEventListener("keydown", handleKeyDown);
-      };
-    }
-  }, [isOpen, setIsOpen]);
-
-  if (!isOpen) return null;
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [setIsOpen]);
 
   const handleApplyCoupon = (e: React.FormEvent) => {
     e.preventDefault();
@@ -111,7 +111,7 @@ export default function CartDrawer() {
                 <button
                   onClick={() => setIsOpen(false)}
                   aria-label="Explore restaurant menu"
-                  className="px-6 py-2.5 rounded-xl bg-primary text-white text-xs font-semibold shadow-glow hover:bg-primary-accent active:scale-95 transition-all focus-ring"
+                  className="px-6 py-2.5 rounded-xl bg-primary text-[#08090B] text-xs font-bold shadow-glow hover:bg-primary-accent active:scale-95 transition-all focus-ring"
                 >
                   Explore Menu
                 </button>
@@ -279,7 +279,7 @@ export default function CartDrawer() {
               <Link
                 href="/checkout"
                 onClick={() => setIsOpen(false)}
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-primary to-primary-accent text-white font-semibold text-sm shadow-glow hover:shadow-glow-lg active:scale-[0.98] transition-all flex items-center justify-center gap-2 group focus-ring"
+                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-primary to-primary-accent text-[#08090B] font-bold text-sm shadow-glow hover:shadow-glow-lg active:scale-[0.98] transition-all flex items-center justify-center gap-2 group focus-ring"
               >
                 <span>Proceed to Checkout</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />

@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { defaultRestaurantConfig } from "@/lib/mockData";
 import { ArrowRight, Calendar, Sparkles, Star, Award, ShieldCheck } from "lucide-react";
 
@@ -20,6 +19,8 @@ export default function HeroSection() {
             alt="Luxury Restaurant Dining Ambiance"
             fetchPriority="high"
             decoding="async"
+            width={1376}
+            height={768}
             className="w-full h-full object-cover object-center scale-105 opacity-35"
           />
         </picture>
@@ -51,7 +52,7 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto justify-center mb-14">
           <Link
             href="/menu"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary to-primary-accent text-white font-semibold text-sm shadow-glow hover:shadow-glow-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 group focus-ring"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary to-primary-accent text-[#08090B] font-bold text-sm shadow-glow hover:shadow-glow-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 group focus-ring min-h-[44px]"
           >
             <span>Explore Menu & Order</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
@@ -59,7 +60,7 @@ export default function HeroSection() {
 
           <Link
             href="/reservation"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-surface/90 backdrop-blur-md border border-border text-text-main hover:text-primary hover:border-primary active:scale-[0.98] font-semibold text-sm transition-all flex items-center justify-center gap-2 focus-ring"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-surface/90 backdrop-blur-md border border-border text-text-main hover:text-primary hover:border-primary active:scale-[0.98] font-semibold text-sm transition-all flex items-center justify-center gap-2 focus-ring min-h-[44px]"
           >
             <Calendar className="w-4 h-4 text-primary" aria-hidden="true" />
             <span>Book a Table</span>

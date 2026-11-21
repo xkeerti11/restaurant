@@ -98,7 +98,7 @@ export default function ReservationWidget() {
                 <button
                   type="button"
                   onClick={() => setIsSubmitted(false)}
-                  className="px-6 py-2.5 rounded-xl bg-surface-elevated hover:bg-surface text-xs font-semibold text-text-main border border-border transition-colors focus-ring"
+                  className="px-6 py-2.5 rounded-xl bg-surface-elevated hover:bg-surface text-xs font-semibold text-text-main border border-border transition-colors focus-ring min-h-[44px]"
                 >
                   Make Another Reservation
                 </button>
@@ -127,7 +127,7 @@ export default function ReservationWidget() {
                     id="res-party-size"
                     value={partySize}
                     onChange={(e) => setPartySize(Number(e.target.value))}
-                    className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-xs text-text-main focus-ring"
+                    className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-xs text-text-main focus-ring min-h-[44px]"
                   >
                     {[1, 2, 3, 4, 5, 6, 7, 8, 10, 12].map((num) => (
                       <option key={num} value={num} className="bg-surface">
@@ -148,8 +148,9 @@ export default function ReservationWidget() {
                     required
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-xs text-text-main focus-ring"
-                  />
+                    className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-xs text-text-main focus-ring min-h-[44px]"
+                  >
+                  </input>
                 </div>
 
                 {/* Seating Area */}
@@ -161,7 +162,7 @@ export default function ReservationWidget() {
                     id="res-seating-area"
                     value={seatingArea}
                     onChange={(e) => setSeatingArea(e.target.value as any)}
-                    className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-xs text-text-main focus-ring"
+                    className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-xs text-text-main focus-ring min-h-[44px]"
                   >
                     <option value="main_hall" className="bg-surface">Grand Dining Hall</option>
                     <option value="private_dining" className="bg-surface">Private Reserve Chamber</option>
@@ -183,9 +184,9 @@ export default function ReservationWidget() {
                       key={slot}
                       aria-pressed={timeSlot === slot}
                       onClick={() => setTimeSlot(slot)}
-                      className={`px-3.5 py-2 rounded-xl text-xs font-semibold active:scale-95 transition-all focus-ring ${
+                      className={`px-3.5 py-2.5 min-h-[44px] rounded-xl text-xs font-bold active:scale-95 transition-all focus-ring ${
                         timeSlot === slot
-                          ? "bg-primary text-white shadow-glow"
+                          ? "bg-primary text-[#08090B] shadow-glow"
                           : "bg-surface text-text-secondary border border-border hover:border-primary/40 hover:text-text-main"
                       }`}
                     >
@@ -208,7 +209,7 @@ export default function ReservationWidget() {
                     placeholder="e.g. Lorde Harrison"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-xs text-text-main placeholder-text-secondary focus-ring"
+                    className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-xs text-text-main placeholder-text-secondary focus-ring min-h-[44px]"
                   />
                 </div>
 
@@ -223,7 +224,7 @@ export default function ReservationWidget() {
                     placeholder="harrison@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-xs text-text-main placeholder-text-secondary focus-ring"
+                    className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-xs text-text-main placeholder-text-secondary focus-ring min-h-[44px]"
                   />
                 </div>
 
@@ -238,7 +239,7 @@ export default function ReservationWidget() {
                     placeholder="+1 (555) 000-0000"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-xs text-text-main placeholder-text-secondary focus-ring"
+                    className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-xs text-text-main placeholder-text-secondary focus-ring min-h-[44px]"
                   />
                 </div>
               </div>
@@ -254,7 +255,7 @@ export default function ReservationWidget() {
                   placeholder="e.g. Anniversary dinner, table near open hearth preferred..."
                   value={specialRequests}
                   onChange={(e) => setSpecialRequests(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-xs text-text-main placeholder-text-secondary focus-ring"
+                  className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-xs text-text-main placeholder-text-secondary focus-ring min-h-[44px]"
                 />
               </div>
 
@@ -262,7 +263,7 @@ export default function ReservationWidget() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-primary-accent text-white font-semibold text-sm shadow-glow hover:shadow-glow-lg active:scale-[0.98] transition-all focus-ring disabled:opacity-50"
+                className="w-full py-4 min-h-[44px] rounded-xl bg-gradient-to-r from-primary to-primary-accent text-[#08090B] font-bold text-sm shadow-glow hover:shadow-glow-lg active:scale-[0.98] transition-all focus-ring disabled:opacity-50"
               >
                 {isSubmitting ? "Securing Table Reservation..." : "Confirm Table Reservation"}
               </button>
