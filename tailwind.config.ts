@@ -46,6 +46,7 @@ const config: Config = {
       animation: {
         marquee: "marquee 30s linear infinite",
         "pulse-subtle": "pulseSubtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        fadeIn: "fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards",
       },
       keyframes: {
         marquee: {
@@ -55,6 +56,10 @@ const config: Config = {
         pulseSubtle: {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.7" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(4px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
     },

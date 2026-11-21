@@ -8,7 +8,7 @@ import { ArrowRight, Calendar, Sparkles, Star, Award, ShieldCheck } from "lucide
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[84vh] sm:min-h-[88vh] lg:min-h-[92vh] flex items-center justify-center overflow-hidden bg-background">
+    <section id="hero" aria-label="Hero Introduction" className="relative min-h-[84vh] sm:min-h-[88vh] lg:min-h-[92vh] flex items-center justify-center overflow-hidden bg-background">
       {/* Background AI-Generated Luxury Image with Cinematic Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <picture>

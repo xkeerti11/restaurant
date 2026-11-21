@@ -422,7 +422,7 @@ export default function CheckoutPage() {
               </h2>
 
               {/* Items List */}
-              <div className="max-h-72 overflow-y-auto space-y-3 pr-1">
+              <div className="max-h-72 overflow-y-auto space-y-3 pr-1" data-lenis-prevent>
                 {items.map((i) => (
                   <div key={i.id} className="flex justify-between items-start text-xs gap-3">
                     <div>

@@ -7,7 +7,7 @@ import { Award } from "lucide-react";
 
 export default function ChefsSection() {
   return (
-    <section className="py-14 sm:py-20 lg:py-24 bg-background border-t border-border">
+    <section id="chefs" aria-label="Executive Chefs" className="py-14 sm:py-20 lg:py-24 bg-background border-t border-border scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
           <div>

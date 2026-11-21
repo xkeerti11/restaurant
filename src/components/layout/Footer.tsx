@@ -185,7 +185,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <p>© {new Date().getFullYear()} {defaultRestaurantConfig.name}. White-label dining platform. All rights reserved.</p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2 text-center">
             <Link href="/privacy" className="hover:text-primary transition-colors focus-ring rounded">
               Privacy Policy
             </Link>

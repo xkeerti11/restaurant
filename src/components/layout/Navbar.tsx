@@ -15,8 +15,20 @@ export default function Navbar() {
   const setCartOpen = useCartStore((state) => state.setIsOpen);
 
   useEffect(() => {
+    let ticking = false;
+    let lastScrolled = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 15);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrolled = window.scrollY > 15;
+          if (currentScrolled !== lastScrolled) {
+            setIsScrolled(currentScrolled);
+            lastScrolled = currentScrolled;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -25,17 +37,16 @@ export default function Navbar() {
   // Lock body scroll and handle Escape key when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
+      const originalOverflow = document.body.style.overflow;
       document.body.style.overflow = "hidden";
       const handleKeyDown = (e: KeyboardEvent) => {
         if (e.key === "Escape") setMobileMenuOpen(false);
       };
       window.addEventListener("keydown", handleKeyDown);
       return () => {
-        document.body.style.overflow = "unset";
+        document.body.style.overflow = originalOverflow;
         window.removeEventListener("keydown", handleKeyDown);
       };
-    } else {
-      document.body.style.overflow = "unset";
     }
   }, [mobileMenuOpen]);
 
@@ -237,7 +248,7 @@ export default function Navbar() {
           </div>
 
           {/* Bottom Fixed Action Panel */}
-          <div className="px-4 sm:px-6 pt-4 pb-8 border-t border-border bg-[#0B0C0E] space-y-3 shadow-2xl">
+          <div className="px-4 sm:px-6 pt-4 pb-[max(1.75rem,env(safe-area-inset-bottom))] border-t border-border bg-[#0B0C0E] space-y-3 shadow-2xl">
             <Link
               href="/reservation"
               onClick={() => setMobileMenuOpen(false)}

@@ -6,7 +6,7 @@ import { Star, Quote, CheckCircle2 } from "lucide-react";
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-14 sm:py-20 lg:py-24 bg-background border-t border-border">
+    <section id="reviews" aria-label="Guest Testimonials" className="py-14 sm:py-20 lg:py-24 bg-background border-t border-border scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-xl mx-auto mb-14">
           <span className="text-xs font-bold uppercase tracking-widest text-primary block mb-2">

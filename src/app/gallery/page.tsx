@@ -34,9 +34,9 @@ export default function GalleryPage() {
       <div className="max-w-4xl mx-auto px-4 mt-8">
         <div className="glass-card rounded-3xl p-8 sm:p-10 border border-border text-center flex flex-col items-center shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-          <h3 className="text-2xl sm:text-3xl font-bold font-heading text-text-main mb-2">
+          <h2 className="text-2xl sm:text-3xl font-bold font-heading text-text-main mb-2">
             Immerse Yourself in Person
-          </h3>
+          </h2>
           <p className="text-xs sm:text-sm text-text-secondary max-w-md mb-8">
             Reservations are highly recommended for evening seatings and private dining experiences.
           </p>

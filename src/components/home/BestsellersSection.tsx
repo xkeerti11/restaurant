@@ -15,7 +15,7 @@ export default function BestsellersSection() {
   const bestsellers = mockMenuItems.filter((item) => item.is_bestseller || item.is_featured);
 
   return (
-    <section id="specials" className="py-14 sm:py-20 lg:py-24 bg-background border-t border-border">
+    <section id="specials" className="py-14 sm:py-20 lg:py-24 bg-background border-t border-border scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-xs font-semibold text-primary uppercase tracking-widest mb-3">

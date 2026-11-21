@@ -52,7 +52,7 @@ export default function ReservationWidget() {
   };
 
   return (
-    <section id="reservation" className="py-14 sm:py-20 lg:py-24 bg-background border-t border-border relative overflow-hidden">
+    <section id="reservation" className="py-14 sm:py-20 lg:py-24 bg-background border-t border-border relative overflow-hidden scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[140px] pointer-events-none" />
 

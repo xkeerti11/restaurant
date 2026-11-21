@@ -15,16 +15,23 @@ interface ItemCustomizerModalProps {
 export default function ItemCustomizerModal({ item, onClose }: ItemCustomizerModalProps) {
   const addItem = useCartStore((state) => state.addItem);
 
-  // Close on Escape key
+  // Lock body scroll and close on Escape key
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [onClose]);
+    if (item) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          onClose();
+        }
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.body.style.overflow = originalOverflow;
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    }
+  }, [item, onClose]);
 
   // Initial state setup based on item
   const [selectedVariant, setSelectedVariant] = useState<FoodVariant | undefined>(
@@ -91,6 +98,7 @@ export default function ItemCustomizerModal({ item, onClose }: ItemCustomizerMod
 
       <div
         className="relative max-w-xl w-full bg-surface border border-border rounded-2xl overflow-hidden shadow-2xl my-8 flex flex-col max-h-[90vh] z-10"
+        data-lenis-prevent
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -129,7 +137,7 @@ export default function ItemCustomizerModal({ item, onClose }: ItemCustomizerMod
         </div>
 
         {/* Scrollable Configuration Options */}
-        <div className="p-6 overflow-y-auto flex-1 space-y-6">
+        <div className="p-6 overflow-y-auto flex-1 space-y-6" data-lenis-prevent>
           <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
             {item.description}
           </p>

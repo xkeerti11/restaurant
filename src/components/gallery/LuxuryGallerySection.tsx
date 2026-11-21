@@ -21,15 +21,22 @@ export default function LuxuryGallerySection({
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>(initialCategory);
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
 
-  // Close lightbox on Escape key
+  // Lock body scroll and close lightbox on Escape key
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && selectedItem) {
-        setSelectedItem(null);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    if (selectedItem) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          setSelectedItem(null);
+        }
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.body.style.overflow = originalOverflow;
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    }
   }, [selectedItem]);
 
   const categories: { label: string; value: GalleryCategory }[] = [
@@ -47,7 +54,7 @@ export default function LuxuryGallerySection({
   }, [items, activeCategory]);
 
   return (
-    <section id="gallery" aria-label="Visual Gallery" className="relative w-full py-14 sm:py-20 lg:py-24 bg-background border-t border-border">
+    <section id="gallery" aria-label="Visual Gallery" className="relative w-full py-14 sm:py-20 lg:py-24 bg-background border-t border-border scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         {showTitle && (
@@ -169,6 +176,7 @@ export default function LuxuryGallerySection({
         >
           <div
             className="relative max-w-4xl w-full bg-surface border border-border rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row z-10"
+            data-lenis-prevent
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}

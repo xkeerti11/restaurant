@@ -27,15 +27,22 @@ export default function CartDrawer() {
   const [inputCoupon, setInputCoupon] = useState("");
   const [couponFeedback, setCouponFeedback] = useState<{ success?: boolean; message?: string } | null>(null);
 
-  // Close on Escape key
+  // Lock body scroll and close on Escape key
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isOpen) {
-        setIsOpen(false);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    if (isOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          setIsOpen(false);
+        }
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.body.style.overflow = originalOverflow;
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    }
   }, [isOpen, setIsOpen]);
 
   if (!isOpen) return null;

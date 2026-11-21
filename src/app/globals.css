@@ -52,10 +52,25 @@ body {
   background-color: #08090B;
   color: #F5F2EC;
   font-family: var(--font-inter);
-  overflow-x: hidden;
+  overflow-x: clip;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Universal Section Scroll Offset for Sticky Header */
+[id] {
+  scroll-margin-top: 5rem;
+}
+@media (min-width: 640px) {
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+}
+@media (min-width: 1024px) {
+  [id] {
+    scroll-margin-top: 7rem;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
